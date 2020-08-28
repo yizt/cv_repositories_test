@@ -10,8 +10,6 @@
 
 ### IC15
 
-
-
 ```shell
 mkdir datasets
 cd datasets
@@ -40,6 +38,29 @@ MODEL.WEIGHT /home/mydir/pretrained_model/trained_model.pth \
 INPUT.MIN_SIZE_TEST 1440 \
 DATASETS.TEST "('icdar_2015_test',)"
 ```
+
+
+
+### TotalText
+
+```shell
+cd datasets
+ln -s /home/mydir/dataset/totaltext total_text
+```
+
+
+
+```shell
+export CUDA_DEVICE_ORDER="PCI_BUS_ID"
+export CUDA_VISIBLE_DEVICES="1"
+python tools/test_net.py --config-file configs/mixtrain/seg_rec_poly_fuse_feature.yaml \
+--local_rank 1 \
+MODEL.WEIGHT /home/mydir/pretrained_model/trained_model.pth \
+INPUT.MIN_SIZE_TEST 1000 \
+DATASETS.TEST "('total_text_test',)"
+```
+
+
 
 
 
@@ -78,6 +99,24 @@ Calculated!{"precision": 0.7680995475113123, "recall": 0.6538276360134809, "hmea
 ```
 
 论文中使用1440(GPU显存不够)，HMean分别为83.1、79.1、75.1
+
+
+
+### TotalText
+
+```shell
+cd evaluation/totaltext/e2e
+python script.py
+```
+
+报错：
+
+```shell
+Error!
+The sample gt_0000000.txt not present in GT
+```
+
+
 
 
 
