@@ -157,7 +157,7 @@ for t in torch._storage_classes:
 
 2) RuntimeError: CUDA out of memory
 
-```
+```shell
 RuntimeError: CUDA out of memory. Tried to allocate 226.00 MiB (GPU 0; 7.93 GiB total capacity; 4.21 GiB already allocated; 102.94 MiB free; 4.65 GiB reserved in total by PyTorch)
 ```
 
