@@ -2,6 +2,10 @@
 
 文档地址：https://huggingface.co/transformers/
 
+
+
+[TOC]
+
 ## 安装
 
 ```shell
@@ -142,4 +146,22 @@ If convicted, Barrientos faces up to four years in prison.  Her next court appea
 
 summarizer(ARTICLE, max_length=130, min_length=30, do_sample=False)
 ```
+
+
+
+
+
+### GPT2 分类
+
+```shell
+## bert-base-uncased
+mkdir gpt2-medium
+cd gpt2-medium
+wget -c -t 0 https://cdn-lfs.huggingface.co/gpt2/7c5d3f4b8b76583b422fcb9189ad6c89d5d97a094541ce8932dce3ecabde1421 -O pytorch_model.bin
+wget -c -t 0 https://huggingface.co/gpt2/resolve/main/config.json -O config.json
+
+wget -c https://huggingface.co/gpt2/resolve/main/vocab.json -O vocab.txt
+```
+
+
 
